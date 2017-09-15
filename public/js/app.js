@@ -9,12 +9,12 @@
             });
             socket.on('message', function (msg) {
                 console.log(msg)
-                $('#message').append('<p>'+msg.user+': '+msg.message+'</p>');
+                $('#message').prepend('<p>'+msg.user+': '+msg.message+'</p>');
             });
 
             socket.on('service-message', function(user){
 
-                $("#message").append('<p>'+user+ 'is connected </p>');
+                $("#message").prepend('<p>'+user+ ' is connected </p>');
 
             });
 

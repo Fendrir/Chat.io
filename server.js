@@ -20,10 +20,10 @@ io.on('connection', function(socket){
     });
 
     socket.on('chat message', function(msg){
-        msg = ent.encode(msg);
-        console.log(msg);
+        var message = ent.encode(msg);
+        // console.log(msg);
         // console.log('message: ' + msg);
-        io.emit('message', {message: ent.encode(msg), user: loggedUser});
+        io.emit('message', {message: message, user: loggedUser});
         
     });
     console.log('User has connected');
