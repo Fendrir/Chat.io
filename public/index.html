@@ -15,12 +15,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <section id="login">
-                    <form form-group "" action="">
-                        <label for="u">Nom utilisateur :</label>
-                        <input class="form-control" id="u" autocomplete="off" autofocus />
+                <section>
+                    <form id="login" form-group "" action="">
+                        <label for="username">Nom utilisateur :</label>
+                        <input class="form-control" id="username" autocomplete="off" autofocus />
                         <p>
-                            <button class="btn btn-success">Login</button>
+                            <button type="submit" class="btn btn-success">Login</button>
                         </p>
                     </form>
                 </section>
@@ -32,7 +32,7 @@
 
         <div class="row">
 
-            <form id="chat" action="">
+            <form id="chat" class="hidden" action="">
                 <div class="col-md-12 class=" form-group "">
 
                     <h1 class="text-center text-info">Bienvenue sur le chat de l'ours</h1>

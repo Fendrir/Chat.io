@@ -11,18 +11,25 @@ app.use(express.static('node_modules'));
 
 //Action sur la connection
 io.on('connection', function(socket){
-    
+    var loggedUser;
+    socket.on('login', function(user){
+
+        loggedUser = ent.encode(user);
+        socket.broadcast.emit('service-message', loggedUser);
+
+    });
+
     socket.on('chat message', function(msg){
         msg = ent.encode(msg);
-        console.log(msg)
-        io.emit('chat message',msg);
+        console.log(msg);
         // console.log('message: ' + msg);
+        io.emit('message', {message: ent.encode(msg), user: loggedUser});
         
-    })
+    });
     console.log('User has connected');
     //Action à la deconnection
     socket.on('disconnect', function(){
         console.log('User is disconnected !')
-})
+});
 
 });
