@@ -4,8 +4,20 @@
             var socket = io();
             $('#chat').submit(function (e) {
                 e.preventDefault()
-                socket.emit('chat message', $('#chat-text').val());
-                $('#chat-text').val('');
+
+                if ($('#chat-text').val()!==('')){
+
+                    socket.emit('chat message', $('#chat-text').val());
+                    $('#chat-text').val('');
+
+                }else{
+
+                    $('#erreur-message').html('Veuillez entrer un message !');
+
+                };
+
+                $('#chat-text').focus();
+
             });
             socket.on('message', function (msg) {
                 console.log(msg)
@@ -21,12 +33,21 @@
             $("#login").submit(function(e){
 
                 e.preventDefault();
-                var username = $('#username');
-                socket.emit('login', username.val());
-                username.val('');
-                $('#chat').removeClass('hidden');
-                $('#login').addClass('hidden');
 
+                if ($('#username').val()!==('')){
+
+                    
+                    var username = $('#username');
+                    socket.emit('login', username.val());
+                    username.val('');
+                    $('#chat').removeClass('hidden');
+                    $('#login').addClass('hidden');
+                    $('#chat-text').focus();
+                }else{
+
+                    $('#erreur').html('entrez un pseudonyme !');
+
+                };
             })
 
         });
