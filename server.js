@@ -1,25 +1,25 @@
 var express = require('express');
 
 
-var morgan = require('morgan'); // Charge le middleware de logging
+// var morgan = require('morgan'); // Charge le middleware de logging
 
-var favicon = require('serve-favicon'); // Charge le middleware de favicon
+// var favicon = require('serve-favicon'); // Charge le middleware de favicon
 
 
 var app = express();
 
 
-app.use(morgan('combined')) // Active le middleware de logging
+// app.use(morgan('combined')) // Active le middleware de logging
 
-.use(express.static(__dirname + '/public')) // Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
+// .use(express.static(__dirname + '/public')) // Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
 
-.use(favicon(__dirname + '/public/favicon.ico')) // Active la favicon indiquée
+// .use(favicon(__dirname + '/public/favicon.ico')) // Active la favicon indiquée
 
-.use(function(req, res){ // Répond enfin
+// .use(function(req, res){ // Répond enfin
 
-    res.send('Hello');
+//     res.send('Hello');
 
-});
+// });
 
 
 
@@ -38,6 +38,16 @@ app.get('/', function(req, res) {
         res.setHeader('Content-Type', 'text/plain');
     
         res.end('Vous êtes à l\'accueil, que puis-je pour vous ?');
+    
+    });
+
+    // route index
+
+app.get('/index', function(req, res) {
+    
+        res.setHeader('Content-Type', 'text/plain');
+    
+        res.end('youpi l\'index est la');
     
     });
 
