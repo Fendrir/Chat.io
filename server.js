@@ -7,7 +7,7 @@ var io = socket(server);
 var ent = require('ent');
 
 app.use(express.static('public'));
-app.use(express.static('node_modules'));
+// app.use(express.static('node_modules'));
 
 //Action sur la connection
 io.on('connection', function(socket){
