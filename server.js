@@ -1,61 +1,26 @@
 var express = require('express');
-
-
-// var morgan = require('morgan'); // Charge le middleware de logging
-
-// var favicon = require('serve-favicon'); // Charge le middleware de favicon
-
-
 var app = express();
+// var bodyParser = require('body-parser');
+var socket = require('socket.io');
+var server = app.listen(1337);
+var io = socket(server);
 
+app.use(express.static('public'));
+app.use(express.static('node_modules'));
 
-// app.use(morgan('combined')) // Active le middleware de logging
+io.on('connection', function(socket){
 
-// .use(express.static(__dirname + '/public')) // Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
+    console.log('user connected');
+    socket.on('disconnect', function(){
 
-// .use(favicon(__dirname + '/public/favicon.ico')) // Active la favicon indiquée
+        console.log('user disconnected')
 
-// .use(function(req, res){ // Répond enfin
-
-//     res.send('Hello');
-
-// });
-
-
-
-app.get('/', function(req, res) {
-
-    res.setHeader('Content-Type', 'text/plain');
-
-    res.end('Vous êtes à l\'accueil');
-
-});
-
-// route accueil
-
-app.get('/', function(req, res) {
-    
-        res.setHeader('Content-Type', 'text/plain');
-    
-        res.end('Vous êtes à l\'accueil, que puis-je pour vous ?');
-    
     });
 
-    // route index
+    socket.on('message-send', function(msg){
+        
+            console.log(msg);
+        
+        });
 
-app.get('/index', function(req, res) {
-    
-        res.setHeader('Content-Type', 'text/plain');
-    
-        res.end('youpi l\'index est la');
-    
-    });
-
-// ... Tout le code de gestion des routes (app.get) se trouve au-dessus
-
-app.use(function(req, res, next){
-    res.setHeader('Content-Type', 'text/plain');
-    res.send(404, 'Page introuvable !');
 });
-
-app.listen(8080);
