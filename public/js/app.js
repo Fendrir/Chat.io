@@ -23,7 +23,7 @@
                 e.preventDefault();
                 var username = $('#username');
                 socket.emit('login', username.val());
-                username.val();
+                username.val('');
                 $('#chat').removeClass('hidden');
                 $('#login').addClass('hidden');
 
