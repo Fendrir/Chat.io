@@ -12,26 +12,63 @@
 
 <body>
 
-    <h1>Bienvenue sur le chat de l'ours</h1>
-
-    <div>
-        <label for="first_name">Prenom</label>
-        <input type="text" name="chat-text" id="chet-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <section id="login">
+                    <form form-group "" action="">
+                        <label for="u">Nom utilisateur :</label>
+                        <input class="form-control" id="u" autocomplete="off" autofocus />
+                        <p>
+                            <button class="btn btn-success">Login</button>
+                        </p>
+                    </form>
+                </section>
+            </div>
+        </div>
     </div>
 
-	<div>
-        <button type="submit" class="submit" id="chat">Chat</button>
-    <div>
+    <div class="container">
 
-        <section>
+        <div class="row">
+
+            <form id="chat" action="">
+                <div class="col-md-12 class=" form-group "">
+
+                    <h1 class="text-center text-info">Bienvenue sur le chat de l'ours</h1>
+
+                    <label for="first_name">Votre Message</label>
+                    <input autocomplete="off" class="form-control" type="text" name="chat-text" id="chat-text">
+                </div>
+        </div>
+    </div>
+
+    <div class="container espace-bouton">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Chat</button>
+            </div>
+
+            </form>
+
+            <div>
+
+                <hi class="text-center text-warning">Message posté</hi>
+
+                <section id="message">
 
 
 
-        </section>
+                </section>
 
+            </div>
+        </div>
     </div>
 
     <script src="jquery/dist/jquery.js"></script>
+    <script src="socket.io/socket.io.js"></script>
     <script src="js/app.js"></script>
 </body>
 
