@@ -51,5 +51,11 @@
             })
 
         });
+
+        $('#reset').on("click",function(){
+            
+                        $('#message').empty();
+            
+                    });
     
     })()

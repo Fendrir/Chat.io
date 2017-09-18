@@ -1,3 +1,4 @@
+
 .row [class^="col-"] {
     
     
@@ -16,5 +17,36 @@ padding: 5px 15px 5px 15px;
 .hidden{
 
     display: none;
+
+}
+
+.btn-login{
+
+    padding-top: 5px;
+    margin-top: 5px;
+
+}
+
+.limiteBox{
+
+	height: 190px;
+	width: 545px;
+	overflow-y: auto;
+    padding: 5px;
+    
+}
+
+.chatBox {
+	height: 200px;
+	background-color: #fff;
+	border-radius: 20px;
+	border: 5px solid #000000;
+	margin-top: 50px;
+	box-shadow:0 0 25px #1476B9;
+}
+
+.username-taille {
+
+    width: 200px;
 
 }

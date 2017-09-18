@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link href="favicon.ico" rel="icon" type="image/x-icon" />   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <title>Document</title>
 </head>
 
@@ -19,9 +19,9 @@
                 <section>
                     <form id="login" form-group "" action="">
                         <label for="username">Nom utilisateur :</label>
-                        <input class="form-control" id="username" autocomplete="off" autofocus />
+                        <input class="form-control username-taille" id="username" autocomplete="off" autofocus />
                         <p>
-                            <button type="submit" class="btn btn-success">Login</button>
+                            <button type="submit" class="btn btn-success btn-login">Login</button>
                         </p>
                         <p id="erreur"></p>
                     </form>
@@ -39,7 +39,7 @@
 
                     <h1 class="text-center text-info">Bienvenue sur le Tchat de l'ours</h1>
 
-                    <label for="first_name">Votre Message</label>
+                    <label for="chat-text">Votre Message</label>
                     <input autocomplete="off" class="form-control" type="text" name="chat-text" id="chat-text">
                     <p id="erreur-message"></p>
                 </div>
@@ -51,7 +51,7 @@
         <div class="row">
 
             <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Chat</button>
+                <button type="button" id="reset" class="btn btn-primary">Reset du Tchat</button>
             </div>
 
             </form>
@@ -60,9 +60,17 @@
 
                 <hi class="text-center text-warning">Message posté</hi>
 
-                <section id="message">
+                <section id="">
 
+                    <div class="container">
 
+                        <div class="row">
+                            <div class="chatBox col-xs-6 col-xs-offset-3">
+                                <div class="limiteBox" id="message"></div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </section>
 
